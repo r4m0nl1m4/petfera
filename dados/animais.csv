@@ -1,0 +1,5 @@
+Identificador,Classe,Nome,Nome científico,Sexo,Tamanho(m),Dieta,Veterinário,Tratador,Nome de batismo
+1,Amphibia,Salamandra-comum,Salamandra salamandra,M,0.3,Carne,1,1,Léui
+2,Aves,Falção,Falco newtoni,F,"0,4",Carne,0,0,Razante
+3,Mammalia,Leão,Panthera leo,M,2,Carne,0,1,Simba
+4,Reptilia,Anaconda,Eunectes murinus,F,18,Carne,1,0,Pequena
