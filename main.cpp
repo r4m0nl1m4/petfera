@@ -1,6 +1,6 @@
 
-//Main for "concessionarias" C++ application
-//Created by r4m0nl1m4 29/10/2019
+//Main for "main to petfera" C++ application
+//Created by r4m0nl1m4 e ggorg03 26/11/2019
 
 //Biblioteca(s)
 #include <iostream>
@@ -9,7 +9,11 @@
 #include "./dealerships/concessionarias.h"
 
 //Inicialização do(s) atributo(s) estático(s) da(s) classe(s)
-int moto::total = 0, caminhao::total = 0, automovel::total = 0, veiculo::total = 0, concessionaria::total = 0;
+int moto::total = 0,            \
+    caminhao::total = 0,        \
+    animalSilvestre::total = 0, \
+    animal::total = 0,          \
+    petfera::total = 0;
 
 //Program
 int main()
