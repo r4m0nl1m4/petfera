@@ -9,24 +9,24 @@
 //Bibliotecas novas
 #include "../../animal.h"
 
-class Mamifero : public Animal
-{
+class Mamifero : public Animal{
     protected:
-        string _cor_do_pelo;
+    string _cor_do_pelo;
+
     public:
-        Mamifero();
-        Mamifero(int id,                 
-                 string nome_cienctifico,
-                 char sexo,              
-                 double tamanho_cm,      
-                 string dieta,           
-                 int veterinario,        
-                 int tratador,            
-                 string nome_batismo,    
-                 string cor_do_pelo      );
-        ~Mamifero();
-        string get_reino();
-        string get_especificidades();
+    Mamifero();
+    Mamifero(int id,
+            string nome_cienctifico,
+            char sexo,
+            double tamanho_cm,
+            string dieta,
+            int veterinario,
+            int tratador,
+            string nome_batismo,
+            string cor_do_pelo);
+    ~Mamifero();
+    string get_reino();
+    string get_especificidades();
 };
 
 #endif

@@ -10,23 +10,26 @@
 #include "./mamifero.h"
 #include "../animal_exotico.h"
 
-class Mamifero_Exotico : public Mamifero, public Animal_Exotico
-{
+class Mamifero_Exotico : public Mamifero, public Animal_Exotico{
     public:
-        Mamifero_Exotico();
-        Mamifero_Exotico(int id,                 
-                         string nome_cienctifico,
-                         char sexo,              
-                         double tamanho_cm,       
-                         string dieta,           
-                         int veterinario,        
-                         int tratador,             
-                         string nome_batismo,    
-                         string cor_do_pelo,     
-                         string pais_de_origem,  
-                         string autorizacao_ibama);
-        ~Mamifero_Exotico();
-        string get_legalidades();
+    Mamifero_Exotico();
+    Mamifero_Exotico(int id,
+            string nome_cienctifico,
+            char sexo,
+            double tamanho_cm,
+            string dieta,
+            int veterinario,
+            int tratador,
+            string nome_batismo,
+            string cor_do_pelo,
+            string pais_de_origem,
+            string autorizacao_ibama);
+    ~Mamifero_Exotico();
+
+    string get_naturalidade();
+    string get_legalidades();
 };
+
+
 
 #endif

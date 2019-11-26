@@ -5,8 +5,7 @@
 //Cabeçalho
 #include "./animal.h"
 
-Animal::Animal()
-{
+Animal::Animal(){
     this->_id = 0;
     this->_nome_cienctifico = "-";
     this->_sexo = '-';
@@ -18,13 +17,13 @@ Animal::Animal()
 }
 
 Animal::Animal(int id,
-               string nome_cienctifico,
-               char sexo,
-               double tamanho_cm,
-               string dieta,
-               int veterinario,
-               int tratador,
-               string nome_batismo)
+        string nome_cienctifico,
+        char sexo,
+        double tamanho_cm,
+        string dieta,
+        int veterinario,
+        int tratador,
+        string nome_batismo)
 {
     this->_id = id;
     this->_nome_cienctifico = nome_cienctifico;
@@ -36,15 +35,13 @@ Animal::Animal(int id,
     this->_nome_batismo = nome_batismo;    
 }
 
-Animal::~Animal() { /*Usaremos o destrutor padrão*/ };
+Animal::~Animal() { /*Usaremos o destrutor padrão*/ }
 
-int Animal::get_id()
-{
-    return this->_id;
-}
+int Animal::get_id(){ return this->_id; }
+int Animal::get_veterinario(){ return this->_veterinario; }
+int Animal::get_tratador() {return this->_tratador; }
 
-ostream& operator<< (ostream& o, Animal* obj)
-{
+ostream& operator<< (ostream& o, Animal* obj){
     o << obj->_id << ";";
     o << obj->get_reino() << ";";
     o << obj->get_especificidades() << ";";

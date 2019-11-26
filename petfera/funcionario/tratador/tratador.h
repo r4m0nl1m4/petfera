@@ -6,27 +6,29 @@
 #ifndef TRATADOR_H
 #define TRATADOR_H
 
-//Bibliotecas
+//Bibliotecas novas
 #include "../funcionario.h"
 
-class Tratador : public Funcionario
-{
+class Tratador : public Funcionario {
     private:
-        int _nivel_de_seguranca;
+    int _nivel_de_seguranca;
+
     public:
-        Tratador();
-        Tratador(int id,
-                 string nome,
-                 string cpf,
-                 short idade,
-                 char tipo_sanguineo,
-                 char fator_rh,
-                 string especialidade,
-                 int nivel_de_seguranca);
-        ~Tratador();
-        string get_profissao();
-        string get_especificidade();
-        void set_especificidade(string especificidade);
+    Tratador();
+    Tratador(int id,
+            string nome,
+            string cpf,
+            short idade,
+            char tipo_sanguineo,
+            char fator_rh,
+            string especialidade,
+            int nivel_de_seguranca);
+    ~Tratador();
+
+    string get_profissao();
+    string get_especificidade();
+    int get_nivel_seguranca();
+    void set_especificidade(string especificidade);
 };
 
 #endif

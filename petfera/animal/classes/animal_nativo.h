@@ -6,6 +6,7 @@
 #ifndef ANIMAL_NATIVO_H
 #define ANIMAL_NATIVO_H
 
+//Cabeçalho
 #include "../animal_silvestre.h"
 
 class Animal_Nativo : public Animal_Silvestre{

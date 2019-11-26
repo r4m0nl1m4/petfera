@@ -10,24 +10,27 @@
 #include "./ave.h"
 #include "../animal_exotico.h"
 
-class Ave_Exotico : public Ave, public Animal_Exotico
-{
+class Ave_Exotico : public Ave, public Animal_Exotico{
     public:
-        Ave_Exotico();
-        Ave_Exotico(int id,
-                    string nome_cienctifico,
-                    char sexo,
-                    double tamanho_cm,
-                    string dieta,
-                    int veterinario,
-                    int tratador,
-                    string nome_batismo,
-                    double tamanho_do_bico_cm,
-                    double envergadura_cm,
-                    string pais_de_origem,
-                    string autorizacao_ibama);
-        ~Ave_Exotico();
-        string get_legalidades();
+    Ave_Exotico();
+    Ave_Exotico(int id,
+                string nome_cienctifico,
+                char sexo,
+                double tamanho_cm,
+                string dieta,
+                int veterinario,
+                int tratador,
+                string nome_batismo,
+                double tamanho_do_bico_cm,
+                double envergadura_cm,
+                string pais_de_origem,
+                string autorizacao_ibama);
+    ~Ave_Exotico();
+    
+    string get_naturalidade();
+    string get_legalidades();
 };
+
+
 
 #endif

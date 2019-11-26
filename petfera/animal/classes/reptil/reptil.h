@@ -9,26 +9,28 @@
 //Bibliotecas novas
 #include "../../animal.h"
 
-class Reptil : public Animal
-{
+class Reptil : public Animal{
     protected:
-        bool _venenoso;
-        string _tipo_veneno;    
+    bool _venenoso;
+    string _tipo_veneno;
+    
     public:
-        Reptil();    
-        Reptil(int id,                 
-               string nome_cienctifico,
-               char sexo,              
-               double tamanho_cm,      
-               string dieta,            
-               int veterinario,        
-               int tratador,           
-               string nome_batismo,    
-               bool venenoso,          
-               string tipo_veneno      );
-        ~Reptil();
-        string get_reino();
-        string get_especificidades();
+    Reptil();
+    
+    Reptil(int id,
+        string nome_cienctifico,
+        char sexo,
+        double tamanho_cm,
+        string dieta,
+        int veterinario,
+        int tratador,
+        string nome_batismo,
+        bool venenoso,
+        string tipo_veneno);
+
+    ~Reptil();
+    string get_reino();
+    string get_especificidades();
 };
 
 #endif

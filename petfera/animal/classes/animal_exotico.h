@@ -6,6 +6,7 @@
 #ifndef ANIMAL_EXOTICO_H
 #define ANIMAL_EXOTICO_H
 
+//Bibliotecas novas
 #include "../animal_silvestre.h"
 
 class Animal_Exotico : public Animal_Silvestre{

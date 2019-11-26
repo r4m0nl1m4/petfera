@@ -5,42 +5,31 @@
 //Cabeçalho
 #include "./veterinario.h"
 
-Veterinario::Veterinario() : Funcionario()
-{
-      this->_crmv = "?????";
-}
+Veterinario::Veterinario() : Funcionario() { this->_crmv = "?????"; }
 
 Veterinario::Veterinario(int id,
-                         string nome,
-                         string cpf,
-                         short idade,
-                         char tipo_sanguineo,
-                         char fator_rh,
-                         string especialidade,
-                         string crmv) : Funcionario(id,
-                                                    nome,
-                                                    cpf,
-                                                    idade,
-                                                    tipo_sanguineo,
-                                                    fator_rh,
-                                                    especialidade)
+                        string nome,
+                        string cpf,
+                        short idade,
+                        char tipo_sanguineo,
+                        char fator_rh,
+                        string especialidade,
+                        string crmv)
+            : Funcionario(id,
+                        nome,
+                        cpf,
+                        idade,
+                        tipo_sanguineo,
+                        fator_rh,
+                        especialidade)
 {
     this->_crmv = crmv;
 }
 
 Veterinario::~Veterinario(){/* Usaremos o detrutor padrão */}
 
-string Veterinario::get_profissao()
-{
-      return "veterinario";
-}
+string Veterinario::get_profissao(){ return "veterinario"; }
 
-string Veterinario::get_especificidade()
-{
-      return this->_crmv;
-}
+string Veterinario::get_especificidade(){ return this->_crmv; }
 
-void Veterinario::set_especificidade(string especificidade)
-{
-      this->_crmv = especificidade;
-}
+void Veterinario::set_especificidade(string especificidade){ this->_crmv = especificidade; }

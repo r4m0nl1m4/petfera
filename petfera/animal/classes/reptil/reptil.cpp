@@ -5,44 +5,38 @@
 //Cabeçalho
 #include "./reptil.h"
 
-//Contrutores
-Reptil::Reptil() : Animal()
-{
+// contrutores
+Reptil::Reptil() : Animal() {
     this->_venenoso = false;
     this->_tipo_veneno = "-";
 }
 
-Reptil::Reptil(int id,                 
-               string nome_cienctifico,
-               char sexo,              
-               double tamanho_cm,      
-               string dieta,           
-               int veterinario,        
-               int tratador,           
-               string nome_batismo,    
-               bool venenoso,          
-               string tipo_veneno      ) : Animal(id,              
-                                                  nome_cienctifico,
-                                                  sexo,             
-                                                  tamanho_cm,       
-                                                  dieta,           
-                                                  veterinario,     
-                                                  tratador,        
-                                                  nome_batismo     ) 
+Reptil::Reptil(int id,
+            string nome_cienctifico,
+            char sexo,
+            double tamanho_cm,
+            string dieta,
+            int veterinario,
+            int tratador,
+            string nome_batismo,
+            bool venenoso,
+            string tipo_veneno)
+    : Animal(id,
+            nome_cienctifico,
+            sexo,
+            tamanho_cm,
+            dieta,
+            veterinario,
+            tratador,
+            nome_batismo)
 {
     this->_venenoso = venenoso;
     this->_tipo_veneno = tipo_veneno;
 }
 
-//Destrutor
+// destrutor
 Reptil::~Reptil() { /*Usaremos o destrutor padrão*/ }
 
-//Getters
-string Reptil::get_reino()
-{
-    return "Reptil";
-}
-string Reptil::get_especificidades()
-{
-    return to_string(this->_venenoso) + ";" + this->_tipo_veneno;
-}
+// getters
+string Reptil::get_reino() { return "Reptil"; }
+string Reptil::get_especificidades(){ return to_string(this->_venenoso) + ";" + this->_tipo_veneno; }

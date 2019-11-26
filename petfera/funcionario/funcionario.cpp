@@ -5,8 +5,7 @@
 //Cabeçalho
 #include "./funcionario.h"
 
-Funcionario::Funcionario()
-{
+Funcionario::Funcionario(){
     this->_id = 0;
     this->_nome = "Bla";
     this->_cpf = "123";
@@ -17,12 +16,12 @@ Funcionario::Funcionario()
 }
 
 Funcionario::Funcionario(int id,
-                         string nome,
-                         string cpf,
-                         short idade,
-                         char tipo_sanguineo,
-                         char fator_rh,
-                         string especialidade)
+                        string nome,
+                        string cpf,
+                        short idade,
+                        char tipo_sanguineo,
+                        char fator_rh,
+                        string especialidade)
 {
     this->_id = id;
     this->_nome = nome;
@@ -32,6 +31,7 @@ Funcionario::Funcionario(int id,
     this->_fator_rh = fator_rh;
     this->_especialidade = especialidade;
 }
+
 
 Funcionario::~Funcionario(){}
 
@@ -45,15 +45,14 @@ Funcionario* Funcionario::operator=(Funcionario* obj)
     this->_fator_rh = obj->_fator_rh;
     this->_especialidade = obj->_especialidade;
     this->set_especificidade(obj->get_especificidade());
+
+    return this;
 }
 
-int Funcionario::get_id()
-{
-    return this->_id;
-}
+int Funcionario::get_id() {return this->_id;}
+string Funcionario::get_nome() {return this->_nome; }
 
-ostream& operator<<(ostream& o, Funcionario* obj)
-{
+ostream& operator<<(ostream& o, Funcionario* obj){
     o << obj->_id << ";";
     o << obj->get_profissao() << ";";
     o << obj->_nome << ";";

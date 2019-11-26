@@ -10,15 +10,14 @@
 #include <string>
 using std::string;
 
-class Animal_Silvestre
-{
+class Animal_Silvestre{
     protected:
-    	string _autorizacao_ibama;
+    string _autorizacao_ibama;
     
     public:
-	    Animal_Silvestre();
-	    Animal_Silvestre(string atoriazacao_ibama);
-	    ~Animal_Silvestre();
+    Animal_Silvestre();
+    Animal_Silvestre(string atoriazacao_ibama);
+    ~Animal_Silvestre();
 
     virtual string get_especificacoes_legais() = 0;
 };
