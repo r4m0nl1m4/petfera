@@ -5,7 +5,7 @@
 //CAbeçalho
 #include "./petfera.h"
 
-string arquivo_petfera = "./dados/petfera.txt";
+string arquivo_petfera = "petfera/dados/petfera.txt";
 
 int int_garantido_entre(int a, int b){
     int entrada;
