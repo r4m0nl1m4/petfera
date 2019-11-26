@@ -25,13 +25,13 @@ CPPFLAGS = -O0        \
 LDFLAGS = -DIR
 #arquivos objetos definidos como pré-requisito
 OBJS = main.o                                             \
-       petfera/rexpression.o                              \
 	   petfera/petfera.o                                  \
 	   petfera/dados/dados_manip.o                        \
 	   petfera/funcionario/funcionario.o                  \
 	   petfera/funcionario/tratador/tratador.o            \
 	   petfera/funcionario/veterinario/veterinario.o      \
 	   petfera/user_interface/ui.o                        \
+	   petfera/validation_data/rexpression.o              \
 	   petfera/animal/animal.o                            \
 	   petfera/animal/animal_silvestre.o                  \
 	   petfera/animal/classes/animal_exotico.o            \
@@ -63,22 +63,17 @@ $(PROG):$(OBJS)
 main.o:
 	$(CC) $(CPPFLAGS) -c main.cpp
 
-#regular expressions
-
-rexpression.o : rexpression.h
-	$(CC) $(CPPFLAGS) -c rexpression.cpp
-
-#petfera
+# petfera #####################################################################
 
 petfera.o : petfera.h
 	$(CC) $(CPPFLAGS) -c petfera.cpp
 
-#dados
+# dados 
 
 dados_manip.o : dados/dados_manip.h
 	$(CC) $(CPPFLAGS) -c dados/dados_manip.cpp
 
-# funcionarios ################################################################
+# funcionarios
 
 funcionario.o : funcionario/funcionario.h
 	$(CC) $(CPPFLAGS) -c funcionario/funcionario.cpp
@@ -89,10 +84,15 @@ tratador.o : funcionario/tratador/tratador.h
 veterinario.o : funcionario/veterinario/veterinario.h
 	$(CC) $(CPPFLAGS) -c funcionario/veterinario/veterinario.cpp
 
-# user interface ##############################################################
+# user interface 
 
 ui.o : user_interface/ui.h
 	$(CC) $(CPPFLAGS) -c user_interface/ui.cpp
+
+# validation data
+
+rexpression.o : validation_data/rexpression.h
+	$(CC) $(CPPFLAGS) -c rexpression.cpp
 
 # animal ######################################################################
 

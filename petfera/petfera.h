@@ -9,7 +9,7 @@
 //Bibliotecas novas
 #include "./dados/dados_manip.h"
 #include "./user_interface/ui.h"
-#include "./rexpression.h"
+#include "./validation_data/rexpression.h"
 #include "./animal/animal.h"
 #include "./funcionario/funcionario.h"
 
