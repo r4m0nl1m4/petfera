@@ -31,7 +31,7 @@ OBJS = main.o                                             \
 	   petfera/funcionario/funcionario.o                  \
 	   petfera/funcionario/tratador/tratador.o            \
 	   petfera/funcionario/veterinario/veterinario.o      \
-	   petfera/animal/ui.o                                \
+	   petfera/user_interface/ui.o                        \
 	   petfera/animal/animal.o                            \
 	   petfera/animal/animal_silvestre.o                  \
 	   petfera/animal/classes/animal_exotico.o            \
@@ -52,11 +52,12 @@ OBJS = main.o                                             \
 #
 #regra de construção do executável
 #
+
 $(PROG):$(OBJS)
 	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS)			
 
 #
-#regra de construção dos arquivos objetos
+#regras de construção dos arquivos objetos
 #
 
 main.o:
@@ -77,9 +78,9 @@ petfera.o : petfera.h
 dados_manip.o : dados/dados_manip.h
 	$(CC) $(CPPFLAGS) -c dados/dados_manip.cpp
 
-#funcionarios
+# funcionarios ################################################################
 
-funcionarios.o : funcionario/funcionario.h
+funcionario.o : funcionario/funcionario.h
 	$(CC) $(CPPFLAGS) -c funcionario/funcionario.cpp
 
 tratador.o : funcionario/tratador/tratador.h
@@ -88,12 +89,12 @@ tratador.o : funcionario/tratador/tratador.h
 veterinario.o : funcionario/veterinario/veterinario.h
 	$(CC) $(CPPFLAGS) -c funcionario/veterinario/veterinario.cpp
 
-#user interface
+# user interface ##############################################################
 
-ui.o : animal/ui.h
-	$(CC) $(CPPFLAGS) -c animal/ui.cpp
+ui.o : user_interface/ui.h
+	$(CC) $(CPPFLAGS) -c user_interface/ui.cpp
 
-#animal
+# animal ######################################################################
 
 animal.o : animal/animal.h
 	$(CC) $(CPPFLAGS) -c animal/animal.cpp
@@ -158,5 +159,6 @@ reptil_exotico.o : petfera/animal/classes/reptil/reptil_exotico.h
 #
 #regra de limpeza dos arquivos
 #
+
 clean:
 	rm -rf core $(PROG) $(OBJS)

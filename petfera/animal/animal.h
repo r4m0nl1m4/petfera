@@ -16,7 +16,7 @@ using std::ostream;
 using std::istream;
 
 //Novas Bibliotecas
-#include "./ui.h"
+#include "../user_interface/ui.h"
 
 class Animal{
     protected:
