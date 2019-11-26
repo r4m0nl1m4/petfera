@@ -12,22 +12,22 @@ Reptil::Reptil() : Animal()
     this->_tipo_veneno = "-";
 }
 
-Reptil::Reptil(int id,                 \
-               string nome_cienctifico,\
-               char sexo,              \
-               double tamanho_cm,      \
-               string dieta,           \
-               int veterinario,        \
-               int tratador,           \
-               string nome_batismo,    \
-               bool venenoso,          \
-               string tipo_veneno      ) : Animal(id,              \
-                                                  nome_cienctifico,\
-                                                  sexo,            \ 
-                                                  tamanho_cm,      \ 
-                                                  dieta,           \
-                                                  veterinario,     \
-                                                  tratador,        \
+Reptil::Reptil(int id,                 
+               string nome_cienctifico,
+               char sexo,              
+               double tamanho_cm,      
+               string dieta,           
+               int veterinario,        
+               int tratador,           
+               string nome_batismo,    
+               bool venenoso,          
+               string tipo_veneno      ) : Animal(id,              
+                                                  nome_cienctifico,
+                                                  sexo,             
+                                                  tamanho_cm,       
+                                                  dieta,           
+                                                  veterinario,     
+                                                  tratador,        
                                                   nome_batismo     ) 
 {
     this->_venenoso = venenoso;

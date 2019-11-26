@@ -7,27 +7,27 @@
 
 Mamifero_Nativo::Mamifero_Nativo() : Mamifero(), Animal_Nativo() {}
 
-Mamifero_Nativo::Mamifero_Nativo(int id,                 \
-                                 string nome_cienctifico,\
-                                 char sexo,              \
-                                 double tamanho_cm,      \
-                                 string dieta,           \
-                                 int veterinario,        \
-                                 int tratador,           \
-                                 string nome_batismo,    \
-                                 string cor_do_pelo,     \
-                                 string uf_de_origem,    \
-                                 string autorizacao,     \
-                                 string autorizacao_ibama) : Mamifero(id,              \
-                                                                      nome_cienctifico,\
-                                                                      sexo,            \
-                                                                      tamanho_cm,      \
-                                                                      dieta,           \
-                                                                      veterinario,     \
-                                                                      tratador,        \
-                                                                      nome_batismo,    \
-                                                                      cor_do_pelo      ), Animal_Nativo(uf_de_origem,\
-                                                                                                  autorizacao,       \ 
+Mamifero_Nativo::Mamifero_Nativo(int id,                 
+                                 string nome_cienctifico,
+                                 char sexo,              
+                                 double tamanho_cm,      
+                                 string dieta,           
+                                 int veterinario,        
+                                 int tratador,           
+                                 string nome_batismo,    
+                                 string cor_do_pelo,     
+                                 string uf_de_origem,    
+                                 string autorizacao,     
+                                 string autorizacao_ibama) : Mamifero(id,              
+                                                                      nome_cienctifico,
+                                                                      sexo,            
+                                                                      tamanho_cm,      
+                                                                      dieta,           
+                                                                      veterinario,     
+                                                                      tratador,        
+                                                                      nome_batismo,    
+                                                                      cor_do_pelo      ), Animal_Nativo(uf_de_origem,
+                                                                                                  autorizacao,        
                                                                                                   autorizacao_ibama  ){}
 
 Mamifero_Nativo::~Mamifero_Nativo() { /*Usaremos o destrutor padrão*/ }

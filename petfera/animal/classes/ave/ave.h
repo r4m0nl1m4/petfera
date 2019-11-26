@@ -16,15 +16,15 @@ class Ave : public Animal
         double _envergadura_cm;
     public:
         Ave();
-        Ave(int id,                   \
-            string nome_cienctifico,  \
-            char sexo,                \
-            double tamanho_cm,        \   
-            string dieta,             \
-            int veterinario,          \
-            int tratador,             \
-            string nome_batismo,      \
-            double tamanho_do_bico_cm,\
+        Ave(int id,                   
+            string nome_cienctifico,  
+            char sexo,                
+            double tamanho_cm,           
+            string dieta,             
+            int veterinario,          
+            int tratador,             
+            string nome_batismo,      
+            double tamanho_do_bico_cm,
             double envergadura_cm     );
         ~Ave();
         string get_reino();

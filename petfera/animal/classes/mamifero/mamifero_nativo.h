@@ -14,17 +14,17 @@ class Mamifero_Nativo : public Mamifero, public Animal_Nativo
 {
     public:
         Mamifero_Nativo();
-        Mamifero_Nativo(int id,                 \
-                        string nome_cienctifico,\
-                        char sexo,              \
-                        double tamanho_cm,      \ 
-                        string dieta,           \ 
-                        int veterinario,        \
-                        int tratador,           \
-                        string nome_batismo,    \
-                        string cor_do_pelo,     \
-                        string uf_de_origem,    \
-                        string autorizacao,     \ 
+        Mamifero_Nativo(int id,                 
+                        string nome_cienctifico,
+                        char sexo,              
+                        double tamanho_cm,       
+                        string dieta,            
+                        int veterinario,        
+                        int tratador,           
+                        string nome_batismo,    
+                        string cor_do_pelo,     
+                        string uf_de_origem,    
+                        string autorizacao,      
                         string autorizacao_ibama);
         ~Mamifero_Nativo();
         string get_legalidades();

@@ -11,21 +11,21 @@ Mamifero::Mamifero() : Animal()
     this->_cor_do_pelo = "-";
 }
 
-Mamifero::Mamifero(int id,                 \
-                   string nome_cienctifico,\
-                   char sexo,              \
-                   double tamanho_cm,      \
-                   string dieta,           \
-                   int veterinario,        \
-                   int tratador,           \
-                   string nome_batismo,    \
-                   string cor_do_pelo      ) : Animal(id,              \
-                                                      nome_cienctifico,\ 
-                                                      sexo,            \
-                                                      tamanho_cm,      \
-                                                      dieta,           \
-                                                      veterinario,     \
-                                                      tratador,        \
+Mamifero::Mamifero(int id,                 
+                   string nome_cienctifico,
+                   char sexo,              
+                   double tamanho_cm,      
+                   string dieta,           
+                   int veterinario,        
+                   int tratador,           
+                   string nome_batismo,    
+                   string cor_do_pelo      ) : Animal(id,              
+                                                      nome_cienctifico, 
+                                                      sexo,            
+                                                      tamanho_cm,      
+                                                      dieta,           
+                                                      veterinario,     
+                                                      tratador,        
                                                       nome_batismo     )
 {
     this->_cor_do_pelo = cor_do_pelo;

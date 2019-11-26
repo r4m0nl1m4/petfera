@@ -13,32 +13,32 @@ CC = g++
 #diretorio
 DIR = pwd
 #diretivas de compilação
-CPPFLAGS = -O0       \
-					 -g        \
-					 -Wall     \
-					 -ansi     \
-					 -pedantic \
-					 -DIR      
+CPPFLAGS = -O0            \
+	       -g             \
+		   -Wall          \
+		   -ansi          \
+		   -pedantic      \
+		   -DIR      
 #diretivas para o ligador (linker)
 LDFLAGS = -DIR
 #arquivos objetos definidos como pré-requisito
 OBJS = main.o                                             \
-			 petfera/dados/dados_manip.o                        \
-			 petfera/funcionario/funcionario.o                  \
-			 petfera/funcionario/tratador/tratador.o            \
-			 petfera/funcionario/veterinario/veterinario.o      \
-			 petfera/animal/classes/anfibio/anfibio.o           \
-			 petfera/animal/classes/anfibio/anfibio_nativo.o    \
-			 petfera/animal/classes/anfibio/anfibio_exotico.o   \
-			 petfera/animal/classes/ave/ave.o                   \
-			 petfera/animal/classes/ave/ave_nativo.o            \
-			 petfera/animal/classes/ave/ave_exotico.o           \
-			 petfera/animal/classes/mamifero/mamifero.o         \
-			 petfera/animal/classes/mamifero/mamifero_nativo.o  \
-			 petfera/animal/classes/mamifero/mamifero_exotico.o \
-			 petfera/animal/classes/reptil/reptil.o             \
-			 petfera/animal/classes/reptil/reptil_nativo.o      \
-			 petfera/animal/classes/reptil/reptil_exotico.o
+	   petfera/dados/dados_manip.o                        \
+	   petfera/funcionario/funcionario.o                  \
+	   petfera/funcionario/tratador/tratador.o            \
+	   petfera/funcionario/veterinario/veterinario.o      \
+	   petfera/animal/classes/anfibio/anfibio.o           \
+	   petfera/animal/classes/anfibio/anfibio_nativo.o    \
+	   petfera/animal/classes/anfibio/anfibio_exotico.o   \
+	   petfera/animal/classes/ave/ave.o                   \
+	   petfera/animal/classes/ave/ave_nativo.o            \
+	   petfera/animal/classes/ave/ave_exotico.o           \
+	   petfera/animal/classes/mamifero/mamifero.o         \
+	   petfera/animal/classes/mamifero/mamifero_nativo.o  \
+	   petfera/animal/classes/mamifero/mamifero_exotico.o \
+	   petfera/animal/classes/reptil/reptil.o             \
+	   petfera/animal/classes/reptil/reptil_nativo.o      \
+	   petfera/animal/classes/reptil/reptil_exotico.o
 
 #
 #regra de construção do executável

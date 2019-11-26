@@ -15,14 +15,14 @@ class Mamifero : public Animal
         string _cor_do_pelo;
     public:
         Mamifero();
-        Mamifero(int id,                 \
-                 string nome_cienctifico,\
-                 char sexo,              \
-                 double tamanho_cm,      \
-                 string dieta,           \
-                 int veterinario,        \
-                 int tratador,           \ 
-                 string nome_batismo,    \
+        Mamifero(int id,                 
+                 string nome_cienctifico,
+                 char sexo,              
+                 double tamanho_cm,      
+                 string dieta,           
+                 int veterinario,        
+                 int tratador,            
+                 string nome_batismo,    
                  string cor_do_pelo      );
         ~Mamifero();
         string get_reino();

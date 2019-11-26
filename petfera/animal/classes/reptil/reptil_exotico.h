@@ -15,17 +15,17 @@ class Reptil_Exotico : public Reptil, public Animal_Exotico
     public:
     Reptil_Exotico();
 
-    Reptil_Exotico(int id,                 \ 
-                   string nome_cienctifico,\
-                   char sexo,              \
-                   double tamanho_cm,      \
-                   string dieta,           \
-                   int veterinario,        \ 
-                   int tratador,           \
-                   string nome_batismo,    \ 
-                   bool venenoso,          \
-                   string tipo_veneno,     \
-                   string pais_de_origem,  \
+    Reptil_Exotico(int id,                  
+                   string nome_cienctifico,
+                   char sexo,              
+                   double tamanho_cm,      
+                   string dieta,           
+                   int veterinario,         
+                   int tratador,           
+                   string nome_batismo,     
+                   bool venenoso,          
+                   string tipo_veneno,     
+                   string pais_de_origem,  
                    string autorizacao_ibama);
 
     ~Reptil_Exotico();
