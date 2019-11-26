@@ -3,49 +3,32 @@
 //Created by r4m0nl1m4 e ggorg03 26/11/2019
 
 //Guarda
-#ifndef ave_H
-#define ave_H
+#ifndef AVE_H
+#define AVE_H
 
 //Bibliotecas novas
-#include ".../animal.h"
+#include "../../animal.h"
 
-class ave : public animal 
+class Ave : public Animal
 {
-    public:
-        //contador objetos
-        static int total;
     protected:
-        //propriedades
-        double tamanho_do_bico_cm, envergadura_das_asas;
-    public:        
-        //Construtores
-        ave( int _id,                     \
-             std::string _classe,         \
-             std::string _nome_cientifico,\
-             char _sexo,                  \
-             double _tamanho,             \
-             std::string _dieta,          \
-             Veterinario _veterinario,    \
-             Tratador _tratador,          \
-             double _tamanho_do_bico_cm,  \
-             double _envergadura_das_asas ) : animal( _id,             \
-                                                      _classe,         \
-                                                      _nome_cientifico,\
-                                                      _sexo,           \
-                                                      _tamanho,        \
-                                                      _dieta,          \
-                                                      _veterinario,    \
-                                                      _tratador        )
-        {
-            tamanho_do_bico_cm = _tamanho_do_bico_cm;
-            envergadura_das_asas = _envergadura_das_asas;
-            total++;
-        }
-        ave() { total++; }
-        //Destrutor
-        ~ave() {}
-        //Inserção e obtenção
-        static int getTotal() { return total; }
+        double _tamanho_do_bico_cm;
+        double _envergadura_cm;
+    public:
+        Ave();
+        Ave(int id,                   \
+            string nome_cienctifico,  \
+            char sexo,                \
+            double tamanho_cm,        \   
+            string dieta,             \
+            int veterinario,          \
+            int tratador,             \
+            string nome_batismo,      \
+            double tamanho_do_bico_cm,\
+            double envergadura_cm     );
+        ~Ave();
+        string get_reino();
+        string get_especificidades();
 };
 
-#endif    /* ave_H */
+#endif

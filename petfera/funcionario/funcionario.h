@@ -3,49 +3,42 @@
 //Created by r4m0nl1m4 e ggorg03 26/11/2019
 
 //Guarda
-#ifndef funcionario_H
-#define funcionario_H
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
 
 //Bibliotecas
-#include <fstream>
-#include <iomanip>
+#include <string>
+using std::string;
+using std::to_string;
 #include <iostream>
-#include <stdlib.h>
+using std::ostream;
 
-class funcionario
+class Funcionario
 {
-    public:
-        //contador objetos
-        static int total;
     protected:
-        //propriedades
-        int id;
-        std::string nome, cpf, especialidade;
-        short idade, tipo_sanguineo;
-        char fator_rh;
-    public:        
-        //Construtores
-        funcionario( int _id,                   \
-                     std::string _nome,         \
-                     std::string _cpf,          \
-                     short _idade,              \ 
-                     short _tipo_sanguineo,     \
-                     char _fator_rh,            \
-                     std::string _especialidade )
-        {
-            id = _id,                        \
-            nome = _nome,                    \
-            cpf = _cpf,                      \
-            idade = _idade,                  \ 
-            tipo_sanguineo = _tipo_sanguineo,\
-            fator_rh = _fator_rh,            \
-            especialidade = _especialidade
-        }
-        funcionario() { total++; }
-        //Destrutor
-        ~funcionario() {}
-        //Inserção e obtenção
-        static int getTotal() { return total; }
+        int _id;
+        string _nome;
+        string _cpf;
+        short _idade;
+        char _tipo_sanguineo;
+        char _fator_rh;
+        string _especialidade;
+    public:
+        Funcionario();
+        Funcionario(int id,
+                    string nome,
+                    string cpf,
+                    short idade,
+                    char tipo_sanguineo,
+                    char fator_rh,
+                    string especialidade);
+        ~Funcionario();        
+        int get_id();
+        virtual string get_profissao() = 0;
+        virtual string get_especificidade() = 0;
+        virtual void set_especificidade(string especificidade) = 0;
+        Funcionario* operator=(Funcionario* obj);
+        friend ostream& operator<<(ostream& o, Funcionario* obj);
 };
 
-#endif    /* funcionario_H */
+#endif

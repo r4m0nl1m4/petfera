@@ -3,50 +3,32 @@
 //Created by r4m0nl1m4 e ggorg03 26/11/2019
 
 //Guarda
-#ifndef reptil_H
-#define reptil_H
+#ifndef REPTIL_H
+#define REPTIL_H
 
 //Bibliotecas novas
-#include ".../animal.h"
+#include "../../animal.h"
 
-class reptil : public veiculo 
+class Reptil : public Animal
 {
-    public:
-        //contador objetos
-        static int total;
     protected:
-        //propriedades
-        bool venenoso;
-        std::string tipo_veneno;
-    public:        
-        //Construtores
-        reptil( int _id,                     \
-                std::string _classe,         \
-                std::string _nome_cientifico,\
-                char _sexo,                  \
-                double _tamanho,             \
-                std::string _dieta,          \
-                Veterinario _veterinario,    \
-                Tratador _tratador,          \
-                bool _venenoso,              \
-                std::string _tipo_veneno     ) : animal( _id,             \
-                                                         _classe,         \
-                                                         _nome_cientifico,\
-                                                         _sexo,           \
-                                                         _tamanho,        \
-                                                         _dieta,          \
-                                                         _veterinario,    \
-                                                         _tratador        )
-        {
-            venenoso = _venenoso;
-            tipo_veneno = _tipo_veneno;
-            total++;
-        }
-        reptil() { total++; }
-        //Destrutor
-        ~reptil() {}
-        //Inserção e obtenção
-        static int getTotal() { return total; }
+        bool _venenoso;
+        string _tipo_veneno;    
+    public:
+        Reptil();    
+        Reptil(int id,                 \
+               string nome_cienctifico,\
+               char sexo,              \
+               double tamanho_cm,      \
+               string dieta,           \ 
+               int veterinario,        \
+               int tratador,           \
+               string nome_batismo,    \
+               bool venenoso,          \
+               string tipo_veneno      );
+        ~Reptil();
+        string get_reino();
+        string get_especificidades();
 };
 
-#endif    /* reptil_H */
+#endif

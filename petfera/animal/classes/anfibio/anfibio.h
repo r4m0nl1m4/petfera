@@ -3,50 +3,32 @@
 //Created by r4m0nl1m4 e ggorg03 26/11/2019
 
 //Guarda
-#ifndef anfibio_H
-#define anfibio_H
+#ifndef ANFIBIO_H
+#define ANFIBIO_H
 
 //Bibliotecas novas
-#include ".../animal.h"
+#include "../../animal.h"
 
-class anfibio : public animal 
+class Anfibio : public Animal
 {
-    public:
-        //contador objetos
-        static int total;
     protected:
-        //propriedades
-        int total_de_mudas;
-        time_t ultima_muda;
-    public:        
-        //Construtores
-        anfibio( int _id,                     \
-                 std::string _classe,         \
-                 std::string _nome_cientifico,\
-                 char _sexo,                  \
-                 double _tamanho,             \
-                 std::string _dieta,          \
-                 Veterinario _veterinario,    \
-                 Tratador _tratador,          \
-                 int _total_de_mudas,         \
-                 time_t _ultima_muda          ) : animal( _id,             \
-                                                          _classe,         \
-                                                          _nome_cientifico,\
-                                                          _sexo,           \
-                                                          _tamanho,        \
-                                                          _dieta,          \
-                                                          _veterinario,    \
-                                                          _tratador        )
-                {
-                    total_de_mudas = _total_de_mudas;
-                    ultima_muda = _ultima_muda;
-                    total++;
-                }
-        anfibio() { total++; }
-        //Destrutor
-        ~anfibio() {}
-        //Inserção e obtenção
-        static int getTotal() { return total; }
+        int _total_de_mudas;
+        string _ultima_muda; // deve ser uma data ; ideia -> usar um struct, uma classe ou regex
+    public:
+        Anfibio();
+        Anfibio(int id,                 \ 
+                string nome_cienctifico,\
+                char sexo,              \ 
+                double tamanho_cm,      \
+                string dieta,           \
+                int veterinario,        \
+                int tratador,           \
+                string nome_batismo,    \
+                int total_de_mudas,     \
+                string ultima_muda      );    
+        ~Anfibio();
+        string get_reino();
+        string get_especificidades();
 };
 
-#endif    /* anfibio_H */
+#endif
