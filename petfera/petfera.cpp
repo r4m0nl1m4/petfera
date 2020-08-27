@@ -24,17 +24,19 @@ int get_option_from_a_interval_of_integers(int begin, int end){
     return option;
 }
 
-int id_disponivel_animal(vector<Animal*> animais){
-    int n_id;
-    cout << "Digite a id do animal: ";
+bool check_the_animal_identity_exist(int identity, vector<Animal*> animals){
+    bool inUse;
+    inUse = none_of( animals.begin(),animals.end(),[identity](Animal* animal){ return animal->get_id() == identity; } );
+    return !inUse;
+}
 
+int set_animal_identity(vector<Animal*> animals){
+    int identity;
     while(true){
-        cin >> n_id;
-
-        if(none_of(animais.begin(),animais.end(),[n_id](Animal* a){return a->get_id() == n_id; })){
-            return n_id;
-        }
-        cout << "Já temos um animal com essa id, tente outra" << endl;
+        cout << "Insert a identity [integer] to the animal: ";
+        cin >> identity;
+        if(!check_the_animal_identity_exist(identity, animals)) return identity;
+        cout << endl << "Error! This identity already exist. Try another one." << endl;
     }
 }
 
@@ -316,7 +318,7 @@ void Petfera::adicionar_animal(){
     this->print_animais();
     cout << endl;
 
-    int id = id_disponivel_animal(this->animais);
+    int id = set_animal_identity(this->animais);
 
     string nome_cienctifico;
     cout << "Digite o nome cientifico: ";
