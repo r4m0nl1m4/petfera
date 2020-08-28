@@ -7,54 +7,52 @@
 
 string arquivo_petfera = "petfera/dados/petfera.txt";
 
-int get_option(){
+int getOption(){
     int option;
     cout << "Option: ";
     cin >> option;
     return option;
 }
 
-int get_option_from_a_interval_of_integers(int begin, int end){
+int getOptionFromIntegersInterval(int begin, int end){
     int option;
     cin >> option;
     while (option < begin || option > end){
         cout << "Chosen a option inside the interval [" << begin << ", " << end << "]. " << endl;
-        option = get_option();
+        option = getOption();
     }
     return option;
 }
 
-bool check_the_animal_identity_exist(int identity, vector<Animal*> animals){
+bool animalIdentityExist(int identity, vector<Animal*> animals){
     bool inUse;
     inUse = none_of( animals.begin(),animals.end(),[identity](Animal* animal){ return animal->get_id() == identity; } );
     return !inUse;
 }
 
-int set_animal_identity(vector<Animal*> animals){
+int setAnimalIdentity(vector<Animal*> animals){
     int identity;
     while(true){
         cout << "Insert a identity [integer] to the animal: ";
         cin >> identity;
-        if(!check_the_animal_identity_exist(identity, animals)) return identity;
-        cout << endl << "Error! This identity already exist. Try another one." << endl;
+        if( !animalIdentityExist(identity, animals) && identity>=0 ) return identity;
+        cout << endl << "Error! This animal's identity already exist. Try another one." << endl;
     }
 }
 
-int id_disponivel_funcionario(vector<Funcionario*> funcionarios){
-    int n_id;
-    cout << "Digite a id do funcionario: ";
+bool employeeIdentityExist(int identity, vector<Funcionario*> employees){
+    bool inUse;
+    inUse = none_of( employees.begin(),employees.end(),[identity](Funcionario* employee){ return employee->get_id() == identity; } );
+    return !inUse;
+}
 
+int setEmployeeIdentity(vector<Funcionario*> employees){
+    int identity;
     while(true){
-        cin >> n_id;
-        if(n_id == 0){
-            cout << "O id de um funcionario não ser 0" << endl;
-        }
-        else if(none_of(funcionarios.begin(),funcionarios.end(),[n_id](Funcionario* f){return f->get_id() == n_id; })){
-            return n_id;
-        }
-        else{
-            cout << "Já temos um funcionario com essa id, tente outra" << endl;
-        }
+        cout << "Insert a identity [integer] to the employee: ";
+        cin >> identity;
+        if( !employeeIdentityExist(identity, employees) && identity>=0 ) return identity;
+        cout << endl << "Error! This employee's identity already exist. Try another one." << endl;
     }
 }
 
@@ -89,7 +87,7 @@ void filtrar_animais(vector<Animal*> animais, bool &sair, bool voltar){
 
         cout << "Para sair da busca [6] | para remover o ultimo filtro [7]" << endl << endl;
 
-        int escolha = get_option_from_a_interval_of_integers(0,7);
+        int escolha = getOptionFromIntegersInterval(0,7);
         
         if(escolha <= 3){
             vector<Animal*> animais_filtrados;
@@ -156,7 +154,7 @@ void Petfera::show_menu(){
 
         cout << "[6] Finalizar Petfera" << endl;
 
-        int escolha = get_option_from_a_interval_of_integers(0,6);
+        int escolha = getOptionFromIntegersInterval(0,6);
 
         switch (escolha)
         {
@@ -206,7 +204,7 @@ void Petfera::buscar_funcionario(){
 
         cout << "Digite [0] para filtrar Tratadores | [1] para filtrar o veterinarios" << endl;
         cout << "Digite [2] para sair ";
-        int escolha = get_option_from_a_interval_of_integers(0,2);
+        int escolha = getOptionFromIntegersInterval(0,2);
 
         if (escolha == 0){
             clear();
@@ -318,7 +316,7 @@ void Petfera::adicionar_animal(){
     this->print_animais();
     cout << endl;
 
-    int id = set_animal_identity(this->animais);
+    int id = setAnimalIdentity(this->animais);
 
     string nome_cienctifico;
     cout << "Digite o nome cientifico: ";
@@ -365,7 +363,7 @@ void Petfera::adicionar_animal(){
 
     int tipo_de_silvestre;
     cout << "[0] animal nativo | [1] animal exotico" << endl;
-    tipo_de_silvestre = get_option_from_a_interval_of_integers(0,1);
+    tipo_de_silvestre = getOptionFromIntegersInterval(0,1);
     
     // coletando dados comuns aos silvestres
     string autorizacao_ibama;
@@ -386,7 +384,7 @@ void Petfera::adicionar_animal(){
         // coletando dados restantes e criando animal Nativo
         cout << "Qual o reino do animal que deseja adicionar?" << endl;
         cout << "[0]anfibio | [1]ave | [2]mamifero | [3]reptil " << endl;
-        int reino_escolhido = get_option_from_a_interval_of_integers(0,3);
+        int reino_escolhido = getOptionFromIntegersInterval(0,3);
         // criando anfibio nativo
         if(reino_escolhido == 0){
 
@@ -598,7 +596,7 @@ void Petfera::adicionar_animal(){
 
         cout << "Qual o reino do animal que deseja adicionar?" << endl;
         cout << "[0]anfibio | [1]ave | [2]mamifero | [3]reptil " << endl;
-        int reino_escolhido = get_option_from_a_interval_of_integers(0,3);
+        int reino_escolhido = getOptionFromIntegersInterval(0,3);
         // criando anfibio nativo
         if(reino_escolhido == 0){
 
@@ -809,7 +807,7 @@ void Petfera::adicionar_funcionario(){
 
     this->print_funcionarios();
 
-    int id = id_disponivel_funcionario(funcionarios);
+    int id = setEmployeeIdentity(funcionarios);
 
     string nome;
     cout << "Digite nome do funcionario: ";
@@ -834,12 +832,12 @@ void Petfera::adicionar_funcionario(){
 
     string tipos_sanguineos = "ABO";
     cout << "Selecione o tipo sanguineo: [0] A | [1] B | [2] C " << endl;
-    int sangue = get_option_from_a_interval_of_integers(0,2);
+    int sangue = getOptionFromIntegersInterval(0,2);
     char tipo_sanguineo = tipos_sanguineos[sangue];
 
     string fatores_rh = "+-";
     cout << "Selecione o fato RH: [0] fator + | [1] fator -" << endl;
-    int rh = get_option_from_a_interval_of_integers(0,1);
+    int rh = getOptionFromIntegersInterval(0,1);
     char fator_rh = fatores_rh[rh];
     
 
@@ -848,7 +846,7 @@ void Petfera::adicionar_funcionario(){
     cin >> especialidade;
 
     cout << "Digite o tipo funcionario [0]Veterinario | [1]Tratador" << endl;
-    int tipo_funcionario = get_option_from_a_interval_of_integers(0,1);
+    int tipo_funcionario = getOptionFromIntegersInterval(0,1);
     
     if(tipo_funcionario == 0){
         string crmv;
@@ -877,7 +875,7 @@ void Petfera::adicionar_funcionario(){
     if(tipo_funcionario == 1){
         int nivel_de_seguranca;
         cout << "Digite o nivel de segurança do tratador (deve ser entre 0 e 2): ";
-        nivel_de_seguranca = get_option_from_a_interval_of_integers(0,2);
+        nivel_de_seguranca = getOptionFromIntegersInterval(0,2);
 
         funcionarios.push_back(new Tratador(id,
                                             nome,
