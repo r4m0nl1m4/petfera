@@ -56,19 +56,24 @@ int setEmployeeIdentity(vector<Funcionario*> employees){
     }
 }
 
+void printAnimals(vector<Animal*> animals){
+    cout << endl;
+    cout << "Animals" << endl;
+    std::for_each(animals.begin(),animals.end(),[](Animal* a){cout << a; });
+    cout << endl;
+}
+
 void filtrar_animais(vector<Animal*> animais, bool &sair, bool voltar){
     clear();
-    cout << "BUSCAR ANIMAL" << endl << endl;
+    cout << "SEARCH ANIMAL" << endl << endl;
     while (!sair && !voltar){
-        // mostra os animais
-        cout << endl;
-        cout << "Animais" << endl;
-        std::for_each(animais.begin(),animais.end(),[](Animal* a){cout << a; });
-        cout << endl;
 
-        // mostra as opcões de busca
         vector<string> reinos = {"Anfibio","Ave","Mamifero","Reptil"};
         vector<string> tipos_de_silvestres = {"Exotico","Nativo"};
+
+        printAnimals(animais);
+
+        // mostra as opcões de busca
         cout << "Filtrar por reino" << endl;
         int cont = 0;
         for(auto r = reinos.begin(); r != reinos.end();++r){
@@ -78,7 +83,7 @@ void filtrar_animais(vector<Animal*> animais, bool &sair, bool voltar){
         cout << endl;
 
         cout << "Filtrar por tipo de silvestre" << endl;
-        
+
         for(auto s = tipos_de_silvestres.begin(); s != tipos_de_silvestres.end();++s){
             cout << "[" << cont << "]" << " filtror por " << *s << endl;
             cont++; 
